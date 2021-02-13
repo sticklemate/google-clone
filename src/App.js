@@ -1,14 +1,29 @@
-import './App.css';
+import "./App.css";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     //BEM naming convention
-    <div className="app">
-      <h1>Hello World!</h1>
+    <Router>
+      {/* switch helps us to render certain components based on the route we are in */}
+      <Switch>
+        <Route path="/search">
+          <h1>This is the search page</h1>
+        </Route>
 
-      {/* Home (the one with the search bar) */}
-      {/* Search page - the results page after the search */}
-    </div>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+      <div className="app">
+        {/* Home (the one with the search bar) */}
+        {/* Search page - the results page after the search */}
+        {/* limited to 100 requests per day - use masked response to limit the api throttle */}
+        {/* components - reusable components */}
+        {/* pages are gonna refer to home page and search page */}
+      </div>
+    </Router>
   );
 }
 
