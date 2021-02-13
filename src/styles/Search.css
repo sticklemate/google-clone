@@ -46,4 +46,8 @@
   border: 1px solid #c6c6c6;
   color:#222;
   }
+
+  .search_buttonsHidden{
+    display: none !important;
+  }
   
